@@ -58,7 +58,7 @@ public class PartyService {
                 .flatMap(id -> parties.find(branchId, id))
                 .orElseThrow(() -> new NoSuchParty(partyId));
         return new PartyView(partyId, row.name(), row.covers(), row.state(), row.position(), row.joinedAt(),
-                row.quotedMinutes(), row.quotedAt(), row.waitedMinutes());
+                row.quotedMinutes(), row.quotedAt(), row.waitedMinutes(), row.table());
     }
 
     /**
