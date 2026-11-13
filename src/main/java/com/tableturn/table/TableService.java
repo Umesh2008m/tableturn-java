@@ -45,6 +45,11 @@ public class TableService {
                 .orElseThrow(() -> new NoSuchTable(branch, no)));
     }
 
+    /** The seats of the largest table in the branch - the largest party it can ever seat. */
+    public int maxCovers(String branch) {
+        return tables.largest(branchId(branch));
+    }
+
     private long branchId(String branch) {
         return branches.idOf(branch).orElseThrow(() -> new NoSuchBranch(branch));
     }
